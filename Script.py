@@ -43,7 +43,7 @@ Eg:- `/set_cap
 ║╭━━━━━━━━━━━━━━━➣
 ║┣⪼📃ʙᴏᴛ : <a href='https://t.me/SbAutoCaptionBot'>𝘼𝙪𝙩𝙤 𝙘𝙖𝙥𝙩𝙞𝙤𝙣 𝙗𝙤𝙩</a>
 ║┣⪼👦Bᴏᴛ Oᴡɴᴇʀ : <a href='https://t.me/Your_RJV'>𝚁𝚊𝚓 𝚅𝚎𝚛𝚖𝚊 ⚝</a>
-║┣⪼🤖Uᴘᴅᴀᴛᴇ : <a href='https://t.me/Sb_botz_Update'>Sɪʟɪᴄᴏɴ Bᴏᴛᴢ™</a>
+║┣⪼🤖Uᴘᴅᴀᴛᴇ : <a href='https://t.me/Sb_botz_Update'>ꜱʙ ʙᴏᴛᴢ ᴜᴘᴅᴀᴛᴇ™</a>
 ║┣⪼📡Hᴏsᴛᴇᴅ ᴏɴ : ʜᴇʀᴏᴋᴜ 
 ║┣⪼🗣️Lᴀɴɢᴜᴀɢᴇ : Pʏᴛʜᴏɴ3
 ║┣⪼📚Lɪʙʀᴀʀʏ : Pʏʀᴏɢʀᴀᴍ 2.11.6
