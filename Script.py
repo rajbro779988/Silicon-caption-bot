@@ -2,7 +2,7 @@ import os
 
 class script(object):
 
-    START_TXT = """<b>Hᴇʟʟᴏ 👋{}\n\n
+    START_TXT = """<b>Hᴇʟʟᴏ {} 👋\n\n
 ɪ ᴀᴍ ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ᴄᴀᴘᴛɪᴏɴ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ, ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ cʜᴀɴɴᴇʟ ᴀɴᴅ ᴇɴᴊᴏʏ
 
 ‣ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/SB_Botz_Update'>ꜱʙ ʙᴏᴛᴢ ᴜᴘᴅᴀᴛᴇ 🤞</a></b>
