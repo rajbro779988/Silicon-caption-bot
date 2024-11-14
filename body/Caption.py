@@ -115,6 +115,20 @@ def extract_year(default_caption):
     match = re.search(r'\b(19\d{2}|20\d{2})\b', default_caption)
     return match.group(1) if match else None
 
+#====================================[ Extract Language Code ]==================================#
+
+def extract_quality(default_caption):
+    quality_pattern = r'\b(2160p|4k|1440p|1080p|720p|576p|560p|480p|360p|240p)\b(?:\s*(HEVC))?' #Add other qualities if you want !
+    qualities = set(re.findall(quality_pattern, default_caption, re.IGNORECASE))
+    if not qualities:
+        return "Unknown Quality"
+    result = []
+    for quality, hevc in qualities:
+        result.append(quality)
+        if hevc:
+            result.append(f"HEVC")  # Ensure HEVC is in uppercase
+    return ", ".join(sorted(result, key=str.lower))
+    
 @Client.on_message(filters.channel)
 async def reCap(bot, message):
     chnl_id = message.chat.id
@@ -127,6 +141,7 @@ async def reCap(bot, message):
                 file_size = obj.file_size
                 language = extract_language(default_caption)
                 year = extract_year(default_caption)
+                quality = extract_quality(default_caption)
                 file_name = (
                     re.sub(r"@\w+\s*", "", file_name)
                     .replace("_", " ")
@@ -136,10 +151,10 @@ async def reCap(bot, message):
                 try:
                     if cap_dets:
                         cap = cap_dets["caption"]
-                        replaced_caption = cap.format(file_name=file_name, file_size=get_size(file_size), default_caption=default_caption, language=language, year=year)
+                        replaced_caption = cap.format(file_name=file_name, file_size=get_size(file_size), default_caption=default_caption, language=language, year=year, quality=quality)
                         await message.edit(replaced_caption)
                     else:
-                        replaced_caption = DEF_CAP.format(file_name=file_name, file_size=get_size(file_size), default_caption=default_caption, language=language, year=year)
+                        replaced_caption = DEF_CAP.format(file_name=default_caption)  #file_name, file_size=get_size(file_size), default_caption=default_caption, language=language, year=year) #Ye nikala kyuki ye kuch kaam k nhi !!
                         await message.edit(replaced_caption)
                 except FloodWait as e:
                     await asyncio.sleep(e.x)
