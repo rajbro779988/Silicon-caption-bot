@@ -24,9 +24,11 @@ class script(object):
 
 `{file_name}` = Oʀɪɢɪɴᴀʟ Fɪʟᴇ Nᴀᴍᴇ
 `{file_size}` = Oʀɪɢɪɴᴀʟ Fɪʟᴇ Sɪᴢᴇ 
-`{language}` = Lᴀɴɢᴜᴀɢᴇ Oғ Fɪʟᴇ Nᴀᴍᴇ
+`{language}` = Lᴀɴɢᴜᴀɢᴇ Oғ Fɪʟᴇ
 `{year}` = Yᴇᴀʀ Oғ Fɪʟᴇ
 `{default_caption}` = Rᴇᴀʟ Cᴀᴘᴛɪᴏɴ Oғ Fɪʟᴇ.
+'{quality}' = Qᴜᴀʟɪᴛʏ ᴏғ ғɪʟᴇ
+'{file_type}' = Tʏᴘᴇ ᴏғ ғɪʟᴇ
 
 Eg:- `/set_cap
 {file_name}
