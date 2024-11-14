@@ -115,7 +115,7 @@ def extract_year(default_caption):
     match = re.search(r'\b(19\d{2}|20\d{2})\b', default_caption)
     return match.group(1) if match else None
 
-#====================================[ Extract Language Code ]==================================#
+#====================================[ Extract Quality Code ]==================================#
 
 def extract_quality(default_caption):
     quality_pattern = r'\b(2160p|4k|1440p|1080p|720p|576p|560p|480p|360p|240p)\b(?:\s*(HEVC))?' #Add other qualities if you want !
@@ -147,11 +147,24 @@ async def reCap(bot, message):
                     .replace("_", " ")
                     .replace(".", " ")
                 )
+                
+                media_type = "Unknown"  # This is what you're trying to determine
+                if message.photo:
+                    media_type = "Photo"
+                elif message.video:
+                    media_type = "Video"
+                elif message.document:
+                    media_type = "Document"
+                elif message.audio:
+                    media_type = "Audio"
+                elif message.voice:
+                    media_type = "Voice Note" 
+                    
                 cap_dets = await chnl_ids.find_one({"chnl_id": chnl_id})
                 try:
                     if cap_dets:
                         cap = cap_dets["caption"]
-                        replaced_caption = cap.format(file_name=file_name, file_size=get_size(file_size), default_caption=default_caption, language=language, year=year, quality=quality)
+                        replaced_caption = cap.format(file_name=file_name, file_size=get_size(file_size), default_caption=default_caption, language=language, year=year, file_type=media_type, quality=quality)
                         await message.edit(replaced_caption)
                     else:
                         replaced_caption = DEF_CAP.format(file_name=default_caption)  #file_name, file_size=get_size(file_size), default_caption=default_caption, language=language, year=year) #Ye nikala kyuki ye kuch kaam k nhi !!
